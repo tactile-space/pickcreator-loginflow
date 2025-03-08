@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FormType } from '../hooks/useFormAnimation';
 import FormTransition from './FormTransition';
@@ -8,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Lock } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
-type AccountType = 'brand' | 'influencer';
+type AccountType = 'brand' | 'influencer' | null;
 
 const AuthForm: React.FC = () => {
   const { toast } = useToast();
@@ -21,7 +20,7 @@ const AuthForm: React.FC = () => {
   const [signupName, setSignupName] = useState('');
   const [signupEmail, setSignupEmail] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
-  const [accountType, setAccountType] = useState<AccountType>('brand');
+  const [accountType, setAccountType] = useState<AccountType>(null);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
